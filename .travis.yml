@@ -13,7 +13,7 @@ cache: bundler
 
 ## Script to run for the test stage
 script:
-  - sudo apt install vagrant
+  - apt-get update && sudo apt-get install -y vagrant
   - bin/kitchen list all
   - bundle install
   - bundle exec kitchen test all
