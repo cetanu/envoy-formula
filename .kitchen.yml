@@ -20,7 +20,7 @@ provisioner:
     - .kitchen
     - .git
   pillars-from-files:
-    envoy.sls: test/pillar/data.sls
+    data.sls: test/pillar/data.sls
   formula: envoy
   state_top:
     base:
