@@ -13,16 +13,11 @@ cache: bundler
 
 ## Script to run for the test stage
 script:
-  - bin/kitchen list all
-  - bundle install
-  - bundle exec kitchen test all
-  #- bin/kitchen verify "${INSTANCE}"
+  - bin/kitchen verify "${INSTANCE}"
 
 ## Stages and jobs matrix
 stages:
   - test
-  - name: release
-    if: branch = master AND type != pull_request
 jobs:
   include:
     ## Define the test stage that runs the linters
