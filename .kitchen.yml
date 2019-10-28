@@ -23,7 +23,12 @@ provisioner:
           - envoy
 
 suites:
-  - name: server
+  - name: nitrogen
+    provisioner:
+      salt_bootstrap_options: -X -p git stable 2017.7
+  - name: carbon
+    provisioner:
+      salt_bootstrap_options: -X -p git stable 2016.11
 
 verifier:
   name: shell
