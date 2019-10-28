@@ -22,6 +22,9 @@ provisioner:
         "*":
           - envoy
 
+suites:
+  - name: server
+
 verifier:
   name: shell
   remote_exec: false
