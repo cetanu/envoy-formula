@@ -1,5 +1,5 @@
 {% set service = {'running': True, 'enabled': True, 'restart': True, 'reload': False} %}
-{{ service.update(pillar.get('envoy', {}).get('service', {})) }}
+{% do service.update(pillar.get('envoy', {}).get('service', {})) %}
 {% set run_state = 'running' if service['running'] else 'stopped' %}
 {% set service_files = {
   'systemd': '/etc/systemd/system/envoy.service',
@@ -7,7 +7,7 @@
 } %}
 
 {% set install = {'from': 'docker', 'version': '1.11.2'} %}
-{{ install.update(pillar.get('envoy', {}).get('install', {})) }}
+{% do install.update(pillar.get('envoy', {}).get('install', {})) %}
 
 
 {{ service_files[service['init_system']] }}:

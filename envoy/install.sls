@@ -1,5 +1,5 @@
 {% set install = {'from': 'docker', 'version': '1.11.2'} %}
-{{ install.update(pillar.get('envoy', {}).get('install', {})) }}
+{% do install.update(pillar.get('envoy', {}).get('install', {})) %}
 
 {% if install['from'] == 'docker' %}
 Pull Envoy container:
