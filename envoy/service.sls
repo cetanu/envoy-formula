@@ -6,7 +6,7 @@
   'initd': '/etc/init.d/envoy'
 } %}
 
-{% set install = {'from': 'docker', 'version': '1.11.2',} %}
+{% set install = {'from': 'docker', 'version': '1.11.2'} %}
 {{ install.update(pillar.get('envoy', {}).get('install', {})) }}
 
 

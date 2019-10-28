@@ -15,6 +15,7 @@ platforms:
 
 provisioner:
   name: salt_solo
+  log_level: debug
   require_chef: true
   salt_copy_filter:
     - .kitchen
