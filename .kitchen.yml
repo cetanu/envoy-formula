@@ -1,0 +1,33 @@
+---
+driver:
+  name: vagrant
+
+platforms:
+  - name: ubuntu-16.04
+  - name: ubuntu-18.04
+
+provisioner:
+  name: salt_solo
+  require_chef: false
+  pillars-from-files:
+    envoy.sls: test/pillar/envoy.sls
+  formula: envoy
+  state_top:
+    base:
+      '*':
+        - envoy
+  pillars:
+    top.sls:
+      base:
+        "*":
+          - envoy
+
+verifier:
+  name: shell
+  remote_exec: false
+  command: >
+    py.test -vvv
+    --connection=docker
+    --hosts=root@$KITCHEN_CONTAINER_ID
+    --junit-xml junit-$KITCHEN_INSTANCE.xml
+    test/integration/$KITCHEN_SUITE
