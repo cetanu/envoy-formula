@@ -13,8 +13,6 @@ cache: bundler
 
 ## Script to run for the test stage
 script:
-  - sudo apt-get update && sudo apt-get install -y virtualbox vagrant
-  - sudo modprobe vboxdrv && sudo dpkg-reconfigure virtualbox-*
   - bin/kitchen list all
   - bundle install
   - bundle exec kitchen test all
