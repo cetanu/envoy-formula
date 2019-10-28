@@ -13,11 +13,11 @@ cache: bundler
 
 ## Script to run for the test stage
 script:
-  - apt-get update && sudo apt-get install -y vagrant
+  - sudo apt-get update && sudo apt-get install -y vagrant
   - bin/kitchen list all
   - bundle install
   - bundle exec kitchen test all
-  - bin/kitchen verify "${INSTANCE}"
+  #- bin/kitchen verify "${INSTANCE}"
 
 ## Stages and jobs matrix
 stages:
