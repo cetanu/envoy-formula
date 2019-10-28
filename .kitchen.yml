@@ -20,7 +20,7 @@ provisioner:
     - .kitchen
     - .git
   pillars-from-files:
-    envoy.sls: test/pillar/envoy.sls
+    envoy.sls: test/pillar/data.sls
   formula: envoy
   state_top:
     base:
@@ -30,15 +30,18 @@ provisioner:
     top.sls:
       base:
         "*":
-          - envoy
+          - data
 
 suites:
-  - name: nitrogen
+  - name: fluorine
     provisioner:
-      salt_bootstrap_options: -X -p git stable 2017.7
-  - name: carbon
-    provisioner:
-      salt_bootstrap_options: -X -p git stable 2016.11
+      salt_bootstrap_options: -X -p git stable 2019.2
+  #- name: nitrogen
+  #  provisioner:
+  #    salt_bootstrap_options: -X -p git stable 2017.7
+  #- name: carbon
+  #  provisioner:
+  #    salt_bootstrap_options: -X -p git stable 2016.11
 
 verifier:
   name: shell
