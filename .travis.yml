@@ -13,6 +13,9 @@ cache: bundler
 
 ## Script to run for the test stage
 script:
+  - bin/kitchen list
+  - bundle install
+  - bundle exec kitchen test
   - bin/kitchen verify "${INSTANCE}"
 
 ## Stages and jobs matrix
