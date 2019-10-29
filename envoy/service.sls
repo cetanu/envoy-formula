@@ -1,6 +1,6 @@
 {% set service = {'running': True, 'enabled': True, 'restart': True, 'reload': False} %}
 {% do service.update(pillar.get('envoy', {}).get('service', {})) %}
-{% set run_state = 'running' if service['running'] else 'stopped' %}
+{% set run_state = 'running' if service['running'] else 'dead' %}
 {% set service_files = {
   'systemd': '/etc/systemd/system/envoy.service',
   'initd': '/etc/init.d/envoy'
