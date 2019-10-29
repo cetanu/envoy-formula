@@ -1,6 +1,6 @@
 envoy:
   install:
-    from: docker
+    from: package
     version: 1.11.2
   service:
     enabled: yes

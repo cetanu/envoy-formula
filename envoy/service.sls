@@ -18,10 +18,10 @@ envoy-service:
   service.{{ run_state }}:
     - name: envoy
     - enable: {{ service['enabled'] }}
-    - require:
-      - sls: envoy.config
-    - watch:
-      - sls: envoy.config
+    #- require:
+    #  - sls: envoy.config
+    #- watch:
+    #  - sls: envoy.config
     # In the event that both restart/reload are true, this will
     # simply set full_restart to true.
     {% if service['restart'] %}
