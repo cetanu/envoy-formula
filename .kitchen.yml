@@ -48,7 +48,8 @@ verifier:
   name: shell
   remote_exec: false
   command: >
-    py.test -vvv
+    pip install pytest &&
+    pytest -vvv
     --connection=docker
     --hosts=root@$KITCHEN_CONTAINER_ID
     --junit-xml junit-$KITCHEN_INSTANCE.xml
