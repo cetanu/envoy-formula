@@ -13,7 +13,7 @@ cache: bundler
 
 ## Script to run for the test stage
 script:
-  - sudo pip install pytest pytest-spec
+  - sudo pip install pytest pytest-spec testinfra
   - bin/kitchen verify all
 
 ## Stages and jobs matrix
