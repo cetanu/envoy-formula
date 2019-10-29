@@ -12,7 +12,7 @@
 
 {{ service_files[service['init_system']] }}:
   file.managed:
-    - source: salt://static/envoy/systemd-envoy-{{ install['from'] }}
+    - source: salt://envoy/files/systemd-envoy-{{ install['from'] }}
 
 envoy-service:
   service.{{ run_state }}:

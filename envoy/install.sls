@@ -27,5 +27,5 @@ Add Get-Envoy Repository:
 Install Envoy from Get-Envoy:
   pkg.installed:
     - name: getenvoy-envoy
-    - version: {{ install['version'] }}
+    - version: "{{ install['version'] }}*"
 {% endif %}

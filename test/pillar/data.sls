@@ -3,6 +3,7 @@ envoy:
     from: package
     version: 1.11.2
   service:
-    enabled: yes
+    running: no
+    enabled: no
     restart: yes
     init_system: systemd

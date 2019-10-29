@@ -1,0 +1,10 @@
+[Unit]
+Description=Envoy Proxy
+
+[Service]
+Type=simple
+Restart=on-failure
+ExecStart=/usr/bin/envoy
+
+[Install]
+WantedBy=multi-user.target
