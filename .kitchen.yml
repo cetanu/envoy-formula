@@ -52,4 +52,4 @@ verifier:
     --connection=docker
     --hosts=root@$KITCHEN_CONTAINER_ID
     --junit-xml junit-$KITCHEN_INSTANCE.xml
-    test/integration/$KITCHEN_SUITE
+    test/acceptance/test_envoy.py
